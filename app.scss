@@ -1,0 +1,270 @@
+$border: 1px solid red;
+
+.wrapper {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+  max-width: 500px;
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .header__logo {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 900;
+      user-select: none;
+      color: #22553c;
+
+      &::after {
+        content: attr(data-version);
+        position: absolute;
+        right: 0;
+        top: -7px;
+        font-size: 0.6rem;
+        font-weight: 400;
+        color: #424242;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .header__balance {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #22553c;
+    }
+  }
+
+  .tabWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+
+    > button {
+      height: 40px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0 8px;
+      border-radius: 3px;
+      transition: all 0.1s ease;
+      color: #123122;
+
+      &:hover {
+        background-color: #ebf3ef;
+      }
+    }
+
+    > button.activeTab {
+      background-color: #e2e6fa;
+      border-radius: 3px;
+      cursor: default;
+
+      &:hover {
+        background: #e2e6fa;
+      }
+    }
+  }
+
+  .activeWalletInfo {
+    width: 100%;
+    background-color: #edfff2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 5px;
+    border-radius: 8px;
+
+    .ownerInfo,
+    .walletType {
+      font-size: 0.75rem;
+      color: #123122;
+      padding: 8px;
+    }
+
+    .ownerInfo {
+      padding-bottom: 0;
+    }
+
+    .walletType {
+      padding-top: 0;
+    }
+
+    .currentBalance {
+      padding: 8px;
+      background-color: #fafdcd;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.15);
+
+      > span {
+        font-size: 0.9rem;
+        color: #7a7a7a;
+      }
+
+      > strong {
+        font-size: 1.4rem;
+        margin: 0 3px;
+      }
+
+      > b {
+        font-size: 0.9rem;
+        color: #7a7a7a;
+      }
+    }
+  }
+
+  .walletTable {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    > li {
+      flex-basis: 32%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 0;
+      background-color: #edeff5;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      &:nth-child(3n - 1) {
+        background-color: #edfabd;
+      }
+
+      .countMinus {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        color: rgb(138, 27, 27);
+        transition: all 0.1s ease;
+
+        &:hover {
+          box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+          border-radius: 3px;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        &:active {
+          background-color: #123122;
+        }
+      }
+
+      .countNumber {
+        margin: 0 8px;
+        user-select: none;
+      }
+
+      .countPlus {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        color: rgb(31, 105, 31);
+        transition: all 0.1s ease;
+
+        &:hover {
+          box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+          border-radius: 3px;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        &:active {
+          background-color: #123122;
+        }
+      }
+    }
+  }
+
+  .wrapper__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(42, 73, 52);
+    text-decoration-thickness: 3px;
+    color: rgb(61, 97, 72);
+  }
+
+  .wrapper__description {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.2rem;
+    color: rgb(68, 87, 74);
+  }
+
+  .wrapper__usernameInput {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.3);
+    transition: all 0.03s ease;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    user-select: none;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    &:focus {
+      border: 3px solid rgb(42, 73, 52);
+    }
+  }
+
+  .wrapper__usernameSubmit {
+    height: 40px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.03s ease;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #22553c;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #2d6e4f;
+    }
+    &:active {
+      background-color: rgb(39, 94, 67);
+    }
+  }
+}
